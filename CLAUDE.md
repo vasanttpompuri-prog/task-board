@@ -33,6 +33,32 @@ chore/<作業名>     # リファクタリング・設定変更など
 - リントエラーがないことを確認する
 - 機密情報（APIキー、パスワード等）がステージングされていないことを確認する
 
+## 技術スタック
+
+| 種別 | 技術 |
+|---|---|
+| フレームワーク | React 18 |
+| ビルドツール | Vite 6 |
+| 言語 | JavaScript (JSX) |
+| スタイリング | Plain CSS（モジュールなし） |
+| 状態管理 | React useState / useEffect |
+| 永続化 | localStorage |
+| デプロイ | GitHub Actions → GitHub Pages |
+
+## コンポーネント命名規約
+
+- コンポーネントファイル名・関数名は **PascalCase**（例: `App.jsx`, `TaskItem.jsx`）
+- CSSクラス名は **kebab-case**（例: `.task-item`, `.add-btn`）
+- イベントハンドラは **handle / on プレフィックス**（例: `handleKeyDown`, `onDelete`）
+- ローカルストレージのキーは定数で管理（例: `const STORAGE_KEY = 'task-board-tasks'`）
+
+## デプロイ先
+
+**本番 URL**: https://vasanttpompuri-prog.github.io/task-board/
+
+- `main` ブランチへのプッシュで GitHub Actions が自動ビルド＆デプロイ
+- ワークフロー定義: `.github/workflows/deploy.yml`
+
 ## 開発ガイドライン
 
 - コメントは原則書かない。WHYが非自明な場合のみ1行で記述する
